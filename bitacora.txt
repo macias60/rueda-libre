@@ -1,0 +1,108 @@
+PROYECTO: Rueda Libre
+EJERCICIO: Kilómetro 0
+FECHA: 20/10/2026
+
+1. Se creó la carpeta rueda-libre.
+2. Se creó el archivo index.html.
+3. Se definió la estructura básica del documento HTML5.
+4. Se configuraron el idioma, la codificación y el título.
+5. Se abrió la página utilizando Live Server.
+6. Se inspeccionó la estructura HTML desde DevTools, pestaña Elements.
+7. Se revisó la solicitud de index.html desde DevTools, pestaña Network.
+8. Se solicitó una ruta inexistente para comprobar la respuesta HTTP.
+
+RESULTADOS:
+
+Solicitud de index.html:
+Código HTTP observado: [<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial del proyecto rueda libre."
+
+    <title>Rueda Libre | Página inicial</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Rueda Libre</h1>
+
+        <p>Un espacio para disfrutar del mundo sobre ruedas.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Bienvenido a Rueda Libre</h2>
+
+            <p>
+                Este es el comienzo de nuestro proyecto web.
+                Aquí construiremos una pagina dedicada al mundo del ciclismo y las experiencias sobre ruedas.
+            </p>
+        </section>
+
+        <section>
+            <h2>Nuestro objetivo</h2>
+
+            <p>
+                Crear un espacio donde podamos compartir informacion, experiencias y novedades.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>].
+
+Solicitud de una ruta inexistente:
+Código HTTP observado: [<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial del proyecto rueda libre."
+
+    <title>Rueda Libre | Página inicial</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Rueda Libre</h1>
+
+        <p>Un espacio para disfrutar del mundo sobre ruedas.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Bienvenido a Rueda Libre</h2>
+
+            <p>
+                Este es el comienzo de nuestro proyecto web.
+                Aquí construiremos una pagina dedicada al mundo del ciclismo y las experiencias sobre ruedas.
+            </p>
+        </section>
+
+        <section>
+            <h2>Nuestro objetivo</h2>
+
+            <p>
+                Crear un espacio donde podamos compartir informacion, experiencias y novedades.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>].
+
+OBSERVACIONES:
