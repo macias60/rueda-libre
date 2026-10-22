@@ -1,0 +1,347 @@
+/* ==================================
+   1. Variables de diseño
+================================== */
+
+:root {
+    --color-primary: #183d32;
+    --color-secondary: #6faf73;
+    --color-accent: #f29f58;
+
+    --color-background: #f7f5ed;
+    --color-surface: #ffffff;
+    --color-text: #303632;
+    --color-muted: #6b746e;
+
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+
+    --shadow-card: 0 8px 24px rgb(24 61 50 / 8%);
+
+    --container-width: 1200px;
+}
+
+/* ==================================
+   2. Reinicio básico
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* ==================================
+   3. Contenido principal
+================================== */
+
+main {
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+    padding-block: 48px;
+}
+
+section {
+    margin-block: 56px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+/* ==================================
+   4. Encabezado
+================================== */
+
+header {
+    padding: 20px 5%;
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+header h1 {
+    color: var(--color-surface);
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 8px 0;
+
+    color: var(--color-surface);
+    font-weight: 600;
+
+    transition: color 180ms ease;
+}
+
+header nav a:hover {
+    color: var(--color-accent);
+}
+
+/* ==================================
+   5. Tarjetas
+================================== */
+
+article {
+    overflow: hidden;
+
+    padding: 24px;
+    margin-block: 24px;
+
+    background: var(--color-surface);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgb(24 61 50 / 12%);
+}
+
+article img {
+    width: 100%;
+    max-height: 320px;
+
+    object-fit: cover;
+    border-radius: var(--radius-medium);
+}
+
+/* ==================================
+   6. Botones y enlaces de acción
+================================== */
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 12px 22px;
+
+    background: var(--color-primary);
+    color: var(--color-surface);
+
+    border: 2px solid var(--color-primary);
+    border-radius: 999px;
+
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+
+    transition:
+        background 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.boton:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+
+    transform: translateY(-2px);
+}
+
+/* ==================================
+   7. Tablas
+================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background: var(--color-surface);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+}
+
+caption {
+    padding: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e9e4;
+    text-align: left;
+}
+
+thead {
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+/* ==================================
+   8. Formularios
+================================== */
+
+form {
+    display: grid;
+    gap: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #cbd4cc;
+    border-radius: var(--radius-small);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-secondary);
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* ==================================
+   9. Pie de página
+================================== */
+
+footer {
+    padding: 32px 5%;
+
+    background: var(--color-primary);
+    color: var(--color-surface);
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-accent);
+}
+
+/* ==================================
+   10. Adaptación a móviles
+================================== */
+
+@media (max-width: 600px) {
+    main {
+        width: min(calc(100% - 24px), var(--container-width));
+        padding-block: 24px;
+    }
+
+    section {
+        margin-block: 36px;
+    }
+
+    header nav ul {
+        gap: 8px 16px;
+    }
+
+    article {
+        padding: 18px;
+    }
+
+    /* Permite consultar tablas anchas
+       sin desbordar toda la página. */
+
+    table {
+        min-width: 580px;
+    }
+
+    #tarifas,
+    #Recorridos {
+        overflow-x: auto;
+    }
+}
+
+/* ==================================
+   11. Respeto por movimiento reducido
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
