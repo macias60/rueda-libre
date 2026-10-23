@@ -51,11 +51,13 @@ img {
 
 a {
     color: var(--color-primary);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 a:hover {
-    color: var(--color-secondary);
+    color: var(--color-primary);
+    text-decoration-thickness: 2px;
 }
 
 button,
@@ -87,6 +89,35 @@ main {
 
     margin-inline: auto;
     padding-block: 48px;
+}
+
+/* Presentación principal */
+.presentacion {
+    padding: clamp(24px, 5vw, 64px);
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border-radius: var(--radius-large);
+}
+
+.presentacion h1 {
+    color: var(--color-surface);
+    max-width: 850px;
+}
+
+.presentacion p {
+    max-width: 650px;
+    margin-bottom: 24px;
+}
+
+.presentacion .boton {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.presentacion .boton:hover {
+    background: var(--color-surface);
+    border-color: var(--color-surface);
 }
 
 section {
@@ -221,10 +252,7 @@ article img {
 table {
     width: 100%;
     border-collapse: collapse;
-
     background: var(--color-surface);
-    border-radius: var(--radius-medium);
-    overflow: hidden;
 }
 
 caption {
@@ -236,7 +264,7 @@ caption {
 th,
 td {
     padding: 14px;
-    border-bottom: 1px solid #e5e9e4;
+    border: 1px solid #cbd4cc;
     text-align: left;
 }
 
@@ -272,12 +300,70 @@ textarea {
     color: var(--color-text);
 }
 
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--color-secondary);
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 2px;
+    border-color: var(--color-primary);
+}
+
+/* Mejoras para el formulario de reservas */
+
+#formulario-reserva {
+    max-width: 800px;
+    margin-inline: auto;
+    padding: clamp(20px, 4vw, 36px);
+    background: var(--color-surface);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-card);
+}
+
+#formulario-reserva form {
+    margin-top: 24px;
+}
+
+#formulario-reserva input,
+#formulario-reserva select,
+#formulario-reserva textarea {
+    min-height: 48px;
+}
+
+#formulario-reserva textarea {
+    resize: vertical;
+}
+
+#formulario-reserva .boton {
+    justify-self: start;
+}
+
+#formulario-reserva input:invalid:not(:placeholder-shown) {
+    border-color: #b42318;
+}
+
+#formulario-reserva input:focus-visible,
+#formulario-reserva select:focus-visible,
+#formulario-reserva textarea:focus-visible,
+#formulario-reserva button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    #formulario-reserva {
+        padding: 18px;
+    }
+
+    #formulario-reserva .boton {
+        width: 100%;
+    }
 }
 
 /* ==================================
@@ -344,4 +430,13 @@ footer a {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+.tabla-contenedor {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-contenedor table {
+    min-width: 580px;
 }
