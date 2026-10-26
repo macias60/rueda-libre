@@ -1,6 +1,4 @@
-/* ==================================
-   1. Variables de diseño
-================================== */
+/* 1. Variables de diseño */
 
 :root {
     /* Colores de marca */
@@ -34,9 +32,7 @@
     --container-width: 75rem;
 }
 
-/* ==================================
-   2. Reinicio básico
-================================== */
+/* 2. Reinicio básico */
 
 * {
     box-sizing: border-box;
@@ -100,9 +96,7 @@ a {
     outline-offset: 4px;
 }
 
-/* ==================================
-   3. Contenido principal
-================================== */
+/* 3. Contenido principal */
 
 main {
     width: calc(100% - 2rem);
@@ -163,9 +157,7 @@ h2 {
 h3 {
     font-size: 1.4rem;
 }
-/* ==================================
-   4. Encabezado
-================================== */
+/* 4. Encabezado */
 
 header {
     padding: 20px 5%;
@@ -222,11 +214,7 @@ header nav a:hover {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
 }
-/* ==================================
-   5. Tarjetas
-================================== */
-
-/* Tarjetas de servicios */
+/* 5. Tarjetas */
 
 article {
     position: relative;
@@ -259,9 +247,7 @@ article img {
     border-radius: var(--radius-medium);
 }
 
-/* ==================================
-   6. Botones y enlaces de acción
-================================== */
+/*  6. Botones y enlaces de acción */
 
 .boton {
     display: inline-flex;
@@ -339,9 +325,7 @@ article img {
     outline-offset: 4px;
 }
 
-/* ==================================
-   7. Tablas
-================================== */
+/* 7. Tablas */
 
 
 .tabla-contenedor {
@@ -380,9 +364,7 @@ tbody th {
     background-color: #e8eee8;
     color: var(--color-text);
 }
-/* ==================================
-   8. Formularios
-================================== */
+/* 8. Formularios */
 
 form {
     display: grid;
@@ -477,9 +459,7 @@ form .boton {
     }
 }
 
-/* ==================================
-   9. Pie de página
-================================== */
+/* 9. Pie de página */
 
 footer {
     padding: 32px 5%;
@@ -493,9 +473,7 @@ footer a {
     color: var(--color-accent);
 }
 
-/* ==================================
-   10. Adaptación a móviles
-================================== */
+/* 10. Adaptación a móviles */
 
 @media (max-width: 600px) {
     main {
@@ -533,9 +511,7 @@ footer a {
     }
 }
 
-/* ==================================
-   11. Respeto por movimiento reducido
-================================== */
+/* 11. Respeto por movimiento reducido */
 
 @media (prefers-reduced-motion: reduce) {
     *,
