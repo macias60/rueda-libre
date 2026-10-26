@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+>
+
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/main.js" defer></script>
     <meta
@@ -16,7 +24,7 @@
 
 <body>
 
-    <!-- Encabezado y menú -->
+
     <header class="navbar">
     <a class="marca" href="index.html" aria-label="Rueda Libre, inicio">
         <img
@@ -28,9 +36,9 @@
     </a>
 
     <nav aria-label="Navegación principal">
-        <ul>
+        <ul id="menu">
             <li>
-                <a href="index.html">Inicio</a>
+                <a href="index.html" class="activo" aria-current="page">Inicio</a>
             </li>
 
             <li>
@@ -44,7 +52,7 @@
     </nav>
 </header>
 
-    <!-- Contenido principal -->
+
     <main>
 
         <section class="presentacion" aria-labelledby="titulo-principal">
@@ -76,9 +84,11 @@
 
             <h2>Nuestros servicios</h2>
 
-            <article>
+            <article class="tarjeta-servicio tarjeta-alquiler">
 
-                <h3>Alquiler de bicicletas</h3>
+                 <span class="etiqueta-nuevo">Nuevo</span>
+
+                 <h3>Alquiler de bicicletas</h3>
 
                 <img
                     src="img/bicicleta.jpg"
@@ -167,7 +177,7 @@
             </p>
 
             <p>
-                <a href="paginas/reserva.html">Reservar ahora</a>
+                <a class="boton" href="paginas/reserva.html">Reservar ahora</a>
             </p>
 
             <p>
@@ -182,7 +192,6 @@
     </main>
 
 
-    <!-- Pie de página -->
     <footer>
 
         <p><strong>Rueda Libre</strong></p>
@@ -190,13 +199,22 @@
         <p>
             Correo:
             <a href="mailto:335macias@gmail.com">
-                335macias@gmail.com
+                Correo electrónico
             </a>
         </p>
 
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
 
     </footer>
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp (se abre en una nueva pestaña)"
+>
+    WhatsApp
+</a>
 
 </body>
 

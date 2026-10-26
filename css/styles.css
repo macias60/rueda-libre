@@ -3,22 +3,35 @@
 ================================== */
 
 :root {
+    /* Colores de marca */
     --color-primary: #183d32;
     --color-secondary: #6faf73;
     --color-accent: #f29f58;
-
     --color-background: #f7f5ed;
     --color-surface: #ffffff;
     --color-text: #303632;
     --color-muted: #6b746e;
 
-    --radius-small: 8px;
-    --radius-medium: 16px;
-    --radius-large: 24px;
+    /* Tipografías */
+    --font-title: "Montserrat", Arial, sans-serif;
+    --font-body: "Open Sans", Arial, sans-serif;
 
-    --shadow-card: 0 8px 24px rgb(24 61 50 / 8%);
+    /* Espaciado */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
 
-    --container-width: 1200px;
+    /* Bordes y sombras */
+    --radius-small: 0.5rem;
+    --radius-medium: 1rem;
+    --radius-large: 1.5rem;
+
+    --shadow-card: 0 0.5rem 1.5rem rgb(24 61 50 / 8%);
+
+    /* Ancho máximo del contenido */
+    --container-width: 75rem;
 }
 
 /* ==================================
@@ -36,10 +49,9 @@ html {
 
 body {
     margin: 0;
-    background: var(--color-background);
+    background-color: var(--color-background);
     color: var(--color-text);
-
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
 }
 
@@ -55,9 +67,20 @@ a {
     text-underline-offset: 3px;
 }
 
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
 a:hover {
     color: var(--color-primary);
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 0.15rem;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
 button,
@@ -82,13 +105,10 @@ a {
 ================================== */
 
 main {
-    width: min(
-        calc(100% - 40px),
-        var(--container-width)
-    );
-
+    width: calc(100% - 2rem);
+    max-width: var(--container-width);
     margin-inline: auto;
-    padding-block: 48px;
+    padding-block: var(--space-lg);
 }
 
 /* Presentación principal */
@@ -127,6 +147,7 @@ section {
 h1,
 h2,
 h3 {
+    font-family: var(--font-title);
     color: var(--color-primary);
     line-height: 1.2;
 }
@@ -139,6 +160,9 @@ h2 {
     font-size: clamp(1.7rem, 3vw, 2.5rem);
 }
 
+h3 {
+    font-size: 1.4rem;
+}
 /* ==================================
    4. Encabezado
 ================================== */
@@ -176,18 +200,42 @@ header nav a {
 header nav a:hover {
     color: var(--color-accent);
 }
+/* Estados del menú */
 
+#menu a {
+    color: var(--color-surface);
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: var(--color-accent);
+}
+
+#menu a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+#menu a.activo {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
 /* ==================================
    5. Tarjetas
 ================================== */
 
+/* Tarjetas de servicios */
+
 article {
+    position: relative;
     overflow: hidden;
+    padding: var(--space-md);
+    margin-block: var(--space-md);
 
-    padding: 24px;
-    margin-block: 24px;
-
-    background: var(--color-surface);
+    background-color: var(--color-surface);
+    border: 1px solid #d9e1da;
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-card);
 
@@ -197,14 +245,16 @@ article {
 }
 
 article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 32px rgb(24 61 50 / 12%);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.875rem 2rem rgb(24 61 50 / 12%);
 }
 
 article img {
+    display: block;
     width: 100%;
-    max-height: 320px;
-
+    max-width: 100%;
+    height: auto;
+    max-height: 20rem;
     object-fit: cover;
     border-radius: var(--radius-medium);
 }
@@ -245,74 +295,135 @@ article img {
     transform: translateY(-2px);
 }
 
+.boton:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.boton:active {
+    transform: scale(0.98);
+}
+
+/* Botón flotante de WhatsApp */
+
+.whatsapp-fijo {
+    position: fixed;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-sm) var(--space-md);
+
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+
+    border: 2px solid var(--color-primary);
+    border-radius: 999px;
+
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+}
+
+.whatsapp-fijo:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.whatsapp-fijo:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
 /* ==================================
    7. Tablas
 ================================== */
 
+
+.tabla-contenedor {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-block: var(--space-md);
+    border-radius: var(--radius-medium);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--color-surface);
+    background-color: var(--color-surface);
 }
 
 caption {
-    padding: 16px;
+    padding: var(--space-sm);
+    color: var(--color-text);
     font-weight: 600;
     text-align: left;
 }
 
 th,
 td {
-    padding: 14px;
-    border: 1px solid #cbd4cc;
+    padding: var(--space-sm);
+    border: 1px solid #d9e1da;
     text-align: left;
 }
 
 thead {
-    background: var(--color-primary);
+    background-color: var(--color-primary);
     color: var(--color-surface);
 }
 
+tbody th {
+    background-color: #e8eee8;
+    color: var(--color-text);
+}
 /* ==================================
    8. Formularios
 ================================== */
 
 form {
     display: grid;
-    gap: 18px;
+    gap: var(--space-md);
+}
+
+.campo {
+    display: grid;
+    gap: var(--space-xs);
 }
 
 label {
     display: block;
-    margin-bottom: 6px;
     font-weight: 600;
 }
 
 input,
 select,
 textarea {
+    display: block;
     width: 100%;
-    padding: 12px 14px;
+    padding: var(--space-sm);
 
     border: 1px solid #cbd4cc;
     border-radius: var(--radius-small);
-    background: var(--color-surface);
+    background-color: var(--color-surface);
     color: var(--color-text);
+    font: inherit;
 }
 
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible,
-button:focus-visible,
-a:focus-visible {
+textarea:focus-visible {
+    border-color: var(--color-primary);
     outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--color-primary);
+form .boton {
+    justify-self: start;
+    padding: var(--space-sm) var(--space-lg);
 }
 
 /* Mejoras para el formulario de reservas */
@@ -388,13 +499,14 @@ footer a {
 
 @media (max-width: 600px) {
     main {
-        width: min(calc(100% - 24px), var(--container-width));
-        padding-block: 24px;
+        width: calc(100% - 1.5rem);
+        padding-block: var(--space-md);
     }
+}
 
     section {
-        margin-block: 36px;
-    }
+    margin-block: var(--space-xl);
+}
 
     header nav ul {
         gap: 8px 16px;
@@ -407,13 +519,17 @@ footer a {
     /* Permite consultar tablas anchas
        sin desbordar toda la página. */
 
-    table {
-        min-width: 580px;
+   @media (max-width: 600px) {
+    header nav ul {
+        gap: var(--space-xs) var(--space-sm);
     }
 
-    #tarifas,
-    #Recorridos {
-        overflow-x: auto;
+    article {
+        padding: var(--space-sm);
+    }
+
+    .tabla-contenedor table {
+        min-width: 36rem;
     }
 }
 
@@ -439,4 +555,8 @@ footer a {
 
 .tabla-contenedor table {
     min-width: 580px;
+}
+
+body {
+    padding-bottom: 5rem;
 }

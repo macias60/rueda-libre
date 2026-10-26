@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+>
+
 <link rel="stylesheet" href="../css/styles.css">
     <meta
     name="description"
@@ -12,8 +20,6 @@
     <title>Tarifas y recorridos | Rueda Libre</title>
 </head>
 <body>
-    
-    <!-- encabezado y menú de navegacion-->
 
     <header>
         <img src="../img/logo.png"
@@ -22,21 +28,20 @@
             
 
         <nav aria-label="Navegación principal">
-            <ul>
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas</a></li>
-                <li><a href="reserva.html">reserva</a></li>
+                <li><a href="tarifas.html" class="activo" aria-current="page">Tarifas</a></li>
+                <li><a href="reserva.html">Reserva</a></li>
             </ul>
         </nav>    
     </header>
 
-    <!-- Contenido principal -->
     <main>
         <h1>Tarifas y recorridos</h1>
-        <p>Consulta nuestros precios de alquiler de bicicletas y descubre nuestros recorridos guiados.</p>
+        <p>Consulta nuestros precios de alquiler y descubre nuestros recorridos guiados.</p>
 
         <section id="tarifas">
-            <h2>Tarifas de alquiler de bicicletas</h2>
+            <h2>Tarifas de alquiler</h2>
             <div class="tabla-contenedor">
             <table>
 
@@ -44,9 +49,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Tipo de bicicleta</th>
-                        <th scope="col">1 hora</th>
-                        <th scope="col">Medio día (4 horas)</th>
-                        <th scope="col">Día completo</th>
+                        <th scope="col">1 Hora</th>
+                        <th scope="col">4 Horas</th>
+                        <th scope="col">8 Horas</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,12 +78,11 @@
             </div>
         </section>
 
-        <!-- tabla de recorridos guidaos-->
         <section id="recorridos">
             <h2>Tarifas de recorridos guiados</h2>
             <div class="tabla-contenedor">
             <table>
-                <caption>precios y características de los recorridos guiados por persona</caption>
+                <caption>Precios y características de los recorridos guiados por persona</caption>
                 <thead>
                     <tr>
                         <th scope="col">Recorrido</th>
@@ -143,9 +147,18 @@
         </p>
         <p>
             Contacto:
-            <a href="mailto:335macias@gmail.com">335macias@gmail.com</a>
+            <a href="mailto:335macias@gmail.com">Correo electrónico</a>
         </p>
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp (se abre en una nueva pestaña)"
+>
+    WhatsApp
+</a>
 </body>
 </html>

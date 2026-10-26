@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+>
+
 <link rel="stylesheet" href="../css/styles.css">
 <script src="../js/main.js" defer></script>
     <meta
@@ -16,7 +24,6 @@
 
 <body>
 
-    <!-- Encabezado y menú -->
     <header>
 
         <img
@@ -26,24 +33,23 @@
         >
 
         <nav aria-label="Navegación principal">
-            <ul>
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas</a></li>
-                <li><a href="reserva.html">reserva</a></li>
+                <li><a href="reserva.html" class="activo" aria-current="page">Reserva</a></li>
             </ul>
         </nav>
 
     </header>
 
 
-    <!-- Contenido principal -->
     <main>
 
         <h1>Reserva tu bicicleta</h1>
 
         <p>
             ¿Quieres disfrutar de una aventura sobre ruedas?
-            Reserva ahora mismo tu bicicleta y elige entre nuestros recorridos guiados.
+            Reserva ahora mismo tu bicicleta o elige entre nuestros recorridos guiados.
         </p>
 
         <section id="formulario-reserva" aria-labelledby="titulo-reserva">
@@ -208,7 +214,7 @@
     </main>
 
 
-    <!-- Pie de página -->
+    
     <footer>
 
         <p><strong>Rueda Libre</strong></p>
@@ -216,13 +222,23 @@
         <p>
             Correo:
             <a href="mailto:335macias@gmail.com">
-                335macias@gmail.com
+                Correo electrónico
             </a>
         </p>
 
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
 
     </footer>
+
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp (se abre en una nueva pestaña)"
+>
+    WhatsApp
+</a>
 
 </body>
 
