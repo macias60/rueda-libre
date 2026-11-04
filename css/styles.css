@@ -32,7 +32,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 7rem;
 }
 
 /* Flexbox en columna: el pie queda abajo en páginas cortas */
@@ -513,6 +513,16 @@ footer a:hover {
 }
 
 /* 11. Tablet (768px en adelante) */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.marca img {
+    width: 5rem;   /* logo más pequeño para que el encabezado fijo no ocupe tanto */
+}
 
 @media (min-width: 768px) {
     .navbar {
