@@ -207,6 +207,28 @@ header nav ul {
     border-radius: var(--radius-medium);
 }
 
+.banner-nocturno {
+    padding: clamp(24px, 5vw, 48px);
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border-radius: var(--radius-large);
+}
+
+.banner-nocturno h2 {
+    color: var(--color-surface);
+}
+
+.banner-nocturno .boton {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.banner-nocturno .boton:hover {
+    background: var(--color-surface);
+    border-color: var(--color-surface);
+}
+
 /* 6. Tarjetas y cuadrículas (Grid + Flexbox) */
 
 article {
@@ -523,13 +545,13 @@ header {
 }
 
 .marca img {
-    width: 5rem;   /* logo más pequeño para que el encabezado fijo no ocupe tanto */
+    width: 5rem;
 }
 
 @media (min-width: 768px) {
     .navbar {
         flex-direction: row;
-        justify-content: space-between;   /* logo a un extremo, menú al otro */
+        justify-content: space-between;
     }
 
     header nav ul {
