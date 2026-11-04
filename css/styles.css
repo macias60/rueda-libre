@@ -1,7 +1,4 @@
-/* 1. Variables de diseño */
-
 :root {
-    /* Colores de marca */
     --color-primary: #183d32;
     --color-secondary: #6faf73;
     --color-accent: #f29f58;
@@ -10,25 +7,20 @@
     --color-text: #303632;
     --color-muted: #6b746e;
 
-    /* Tipografías */
     --font-title: "Montserrat", Arial, sans-serif;
     --font-body: "Open Sans", Arial, sans-serif;
 
-    /* Espaciado */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
 
-    /* Bordes y sombras */
     --radius-small: 0.5rem;
     --radius-medium: 1rem;
     --radius-large: 1.5rem;
 
     --shadow-card: 0 0.5rem 1.5rem rgb(24 61 50 / 8%);
-
-    /* Ancho máximo del contenido */
     --container-width: 75rem;
 }
 
@@ -43,8 +35,13 @@ html {
     scroll-padding-top: 90px;
 }
 
+/* Flexbox en columna: el pie queda abajo en páginas cortas */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
+    padding-bottom: 5rem;
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-body);
@@ -60,23 +57,11 @@ img {
 a {
     color: var(--color-primary);
     text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: underline;
     text-underline-offset: 0.2rem;
 }
 
 a:hover {
-    color: var(--color-primary);
     text-decoration-thickness: 0.15rem;
-}
-
-a:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 4px;
 }
 
 button,
@@ -96,17 +81,97 @@ a {
     outline-offset: 4px;
 }
 
-/* 3. Contenido principal */
+/* 3. Contenido principal y tipografía */
 
 main {
-    width: calc(100% - 2rem);
+    flex: 1;
+    width: calc(100% - 1.5rem);
     max-width: var(--container-width);
     margin-inline: auto;
-    padding-block: var(--space-lg);
+    padding-block: var(--space-md);
 }
 
-/* Presentación principal */
+section {
+    margin-block: var(--space-xl);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/* 4. Encabezado (Flexbox)
+   Móvil: logo arriba y menú debajo, centrados. */
+
+header {
+    padding: 12px 5%;
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.marca img {
+    width: 9rem;
+    height: auto;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--color-surface);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 180ms ease;
+}
+
+#menu a:hover {
+    color: var(--color-accent);
+}
+
+#menu a.activo {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
+
+/* 5. Portada */
+
 .presentacion {
+    display: grid;
+    gap: var(--space-lg);
     padding: clamp(24px, 5vw, 64px);
     background: var(--color-primary);
     color: var(--color-surface);
@@ -114,8 +179,8 @@ main {
 }
 
 .presentacion h1 {
-    color: var(--color-surface);
     max-width: 850px;
+    color: var(--color-surface);
 }
 
 .presentacion p {
@@ -134,102 +199,25 @@ main {
     border-color: var(--color-surface);
 }
 
-section {
-    margin-block: 56px;
+.presentacion-foto {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-medium);
 }
 
-h1,
-h2,
-h3 {
-    font-family: var(--font-title);
-    color: var(--color-primary);
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-}
-
-h2 {
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-}
-
-h3 {
-    font-size: 1.4rem;
-}
-/* 4. Encabezado */
-
-header {
-    padding: 20px 5%;
-    background: var(--color-primary);
-    color: var(--color-surface);
-}
-
-header h1 {
-    color: var(--color-surface);
-}
-
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-header nav a {
-    display: inline-block;
-    padding: 8px 0;
-
-    color: var(--color-surface);
-    font-weight: 600;
-
-    transition: color 180ms ease;
-}
-
-header nav a:hover {
-    color: var(--color-accent);
-}
-/* Estados del menú */
-
-#menu a {
-    color: var(--color-surface);
-    text-decoration: none;
-}
-
-#menu a:hover {
-    color: var(--color-accent);
-}
-
-#menu a:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 4px;
-}
-
-#menu a.activo {
-    color: var(--color-accent);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
-}
-/* 5. Tarjetas */
+/* 6. Tarjetas y cuadrículas (Grid + Flexbox) */
 
 article {
     position: relative;
     overflow: hidden;
     padding: var(--space-md);
     margin-block: var(--space-md);
-
     background-color: var(--color-surface);
     border: 1px solid #d9e1da;
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-card);
-
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
+    transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 article:hover {
@@ -238,59 +226,89 @@ article:hover {
 }
 
 article img {
-    display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
     max-height: 20rem;
     object-fit: cover;
     border-radius: var(--radius-medium);
 }
 
-/*  6. Botones y enlaces de acción */
+/* Cuadrícula adaptable: sin media queries, el navegador decide
+   cuántas columnas caben (mínimo 16rem cada una). */
+.servicios-grid,
+.flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-md);
+}
+
+.rutas-grid {
+    display: grid;
+    gap: var(--space-md);   /* móvil: una columna */
+}
+
+/* Cada tarjeta es una columna flex */
+.servicios-grid article,
+.flota-grid article,
+.rutas-grid article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-block: 0;
+}
+
+.servicios-grid article img,
+.flota-grid article img,
+.rutas-grid article img {
+    aspect-ratio: 4 / 3;
+}
+
+/* El enlace o botón final siempre queda al fondo de la tarjeta */
+.servicios-grid article p:last-child,
+.flota-grid article .boton {
+    margin-top: auto;
+}
+
+.precio {
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.precio span {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+/* 7. Botones */
 
 .boton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 48px;
     padding: 12px 22px;
-
     background: var(--color-primary);
     color: var(--color-surface);
-
     border: 2px solid var(--color-primary);
     border-radius: 999px;
-
     font-weight: 700;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
-
-    transition:
-        background 180ms ease,
-        color 180ms ease,
-        transform 180ms ease;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .boton:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: var(--color-primary);
-
     transform: translateY(-2px);
 }
 
-.boton:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 4px;
-}
-
 .boton:active {
-    transform: scale(0.98);
-}
-
-/* Botón flotante de WhatsApp */
+    transform: scale(0.98);}
 
 .whatsapp-fijo {
     position: fixed;
@@ -298,35 +316,30 @@ article img {
     bottom: var(--space-md);
     z-index: 1000;
 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: var(--space-sm) var(--space-md);
+    width: 3.5rem;
+    height: 3.5rem;
 
-    background-color: var(--color-primary);
-    color: var(--color-surface);
-
-    border: 2px solid var(--color-primary);
-    border-radius: 999px;
-
-    font-weight: 700;
-    text-decoration: none;
+    background-color: #25d366;
+    border-radius: 50%;
     box-shadow: var(--shadow-card);
+}
+
+.whatsapp-fijo img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .whatsapp-fijo:hover {
     background-color: var(--color-accent);
-    color: var(--color-primary);
+
 }
 
-.whatsapp-fijo:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 4px;
-}
-
-/* 7. Tablas */
-
+/* 8. Tablas
+   Móvil: relleno y letra reducidos para leerlas sin desplazamiento lateral. */
 
 .tabla-contenedor {
     max-width: 100%;
@@ -339,18 +352,20 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--color-surface);
+    font-size: 0.75rem;
 }
 
 caption {
-    padding: var(--space-sm);
+    padding: var(--space-xs) 0;
     color: var(--color-text);
+    font-size: 0.875rem;
     font-weight: 600;
     text-align: left;
 }
 
 th,
 td {
-    padding: var(--space-sm);
+    padding: 0.5rem 0.25rem;
     border: 1px solid #d9e1da;
     text-align: left;
 }
@@ -364,7 +379,8 @@ tbody th {
     background-color: #e8eee8;
     color: var(--color-text);
 }
-/* 8. Formularios */
+
+/* 9. Formularios (Grid) */
 
 form {
     display: grid;
@@ -386,13 +402,12 @@ select,
 textarea {
     display: block;
     width: 100%;
+    min-height: 48px;
     padding: var(--space-sm);
-
     border: 1px solid #cbd4cc;
     border-radius: var(--radius-small);
     background-color: var(--color-surface);
     color: var(--color-text);
-    font: inherit;
 }
 
 input:focus-visible,
@@ -403,67 +418,64 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
+/* Marca el error solo después de que la persona interactuó */
+input:user-invalid,
+select:user-invalid {
+    border-color: #b42318;
+}
+
+textarea {
+    resize: vertical;
+}
+
 form .boton {
-    justify-self: start;
+    width: 100%;
     padding: var(--space-sm) var(--space-lg);
 }
 
-/* Mejoras para el formulario de reservas */
-
 #formulario-reserva {
-    max-width: 800px;
-    margin-inline: auto;
-    padding: clamp(20px, 4vw, 36px);
+    margin-block: 0;
+    padding: clamp(1.125rem, 4vw, 2.25rem);
     background: var(--color-surface);
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-card);
 }
 
 #formulario-reserva form {
-    margin-top: 24px;
+    margin-top: var(--space-md);
 }
 
-#formulario-reserva input,
-#formulario-reserva select,
-#formulario-reserva textarea {
-    min-height: 48px;
+/* Reservas: formulario + información lateral */
+
+.reserva-layout {
+    display: grid;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
 }
 
-#formulario-reserva textarea {
-    resize: vertical;
+.reserva-info {
+    display: grid;
+    gap: var(--space-md);
+    align-content: start;
 }
 
-#formulario-reserva .boton {
-    justify-self: start;
+.reserva-info section {
+    margin-block: 0;
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-card);
 }
 
-#formulario-reserva input:invalid:not(:placeholder-shown) {
-    border-color: #b42318;
+.reserva-info h2 {
+    font-size: 1.4rem;
 }
 
-#formulario-reserva input:focus-visible,
-#formulario-reserva select:focus-visible,
-#formulario-reserva textarea:focus-visible,
-#formulario-reserva button:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
-}
-
-@media (max-width: 600px) {
-    #formulario-reserva {
-        padding: 18px;
-    }
-
-    #formulario-reserva .boton {
-        width: 100%;
-    }
-}
-
-/* 9. Pie de página */
+/* 10. Pie de página (Flexbox)
+   Móvil: bloques apilados y centrados. */
 
 footer {
-    padding: 32px 5%;
-
+    padding: var(--space-lg) 5%;
     background: var(--color-primary);
     color: var(--color-surface);
     text-align: center;
@@ -473,45 +485,128 @@ footer a {
     color: var(--color-accent);
 }
 
-/* 10. Adaptación a móviles */
-
-@media (max-width: 600px) {
-    main {
-        width: calc(100% - 1.5rem);
-        padding-block: var(--space-md);
-    }
+footer a:hover {
+    color: var(--color-surface);
 }
 
-    section {
-    margin-block: var(--space-xl);
+.pie-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
 }
 
+.pie-bloque p {
+    margin: 0 0 0.25rem;
+}
+
+.pie-bloque .pie-titulo {
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+.pie-copy {
+    margin: var(--space-lg) 0 0;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    font-size: 0.875rem;
+}
+
+/* 11. Tablet (768px en adelante) */
+
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;   /* logo a un extremo, menú al otro */
+    }
+
     header nav ul {
-        gap: 8px 16px;
+        justify-content: flex-end;
     }
 
-    article {
-        padding: 18px;
+    .presentacion-foto {
+        aspect-ratio: 16 / 9;
     }
 
-    /* Permite consultar tablas anchas
-       sin desbordar toda la página. */
-
-   @media (max-width: 600px) {
-    header nav ul {
-        gap: var(--space-xs) var(--space-sm);
+    .rutas-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    article {
+    table {
+        font-size: 1rem;
+    }
+
+    caption {
+        padding: var(--space-sm);
+        font-size: 1rem;
+    }
+
+    th,
+    td {
         padding: var(--space-sm);
     }
 
-    .tabla-contenedor table {
-        min-width: 36rem;
+    #formulario-reserva form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #formulario-reserva .campo-completo,
+    #formulario-reserva .boton {
+        grid-column: 1 / -1;
+    }
+
+    form .boton {
+        width: auto;
+        justify-self: start;
+    }
+
+    .reserva-info {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    .pie-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .pie-copy {
+        text-align: center;
     }
 }
 
-/* 11. Respeto por movimiento reducido */
+/* 12. Escritorio (1200px en adelante) */
+
+@media (min-width: 1200px) {
+    main {
+        width: calc(100% - 2rem);
+        padding-block: var(--space-lg);
+    }
+
+    .presentacion {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+    }
+
+    .presentacion-foto {
+        aspect-ratio: 4 / 3;
+    }
+
+    .reserva-layout {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    .reserva-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 13. Respeto por movimiento reducido */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -522,17 +617,4 @@ footer a {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-}
-
-.tabla-contenedor {
-    max-width: 100%;
-    overflow-x: auto;
-}
-
-.tabla-contenedor table {
-    min-width: 580px;
-}
-
-body {
-    padding-bottom: 5rem;
 }

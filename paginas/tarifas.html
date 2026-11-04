@@ -21,19 +21,25 @@
 </head>
 <body>
 
-    <header>
-        <img src="../img/logo.png"
-            alt="Logo de Rueda Libre"
-            width="150">
-            
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp">
+    <img src="../img/whatsapp.png" alt="" width="50" height="50"></a>
 
+    <header class="navbar">
+        <a class="marca" href="../index.html" aria-label="Rueda Libre, inicio">
+            <img src="../img/logo.png" alt="" width="150" height="150">
+        </a>
         <nav aria-label="Navegación principal">
             <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html" class="activo" aria-current="page">Tarifas</a></li>
                 <li><a href="reserva.html">Reserva</a></li>
             </ul>
-        </nav>    
+        </nav>
     </header>
 
     <main>
@@ -56,22 +62,46 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Urbana</th>
+                        <th scope="row">Urbana Clásica</th>
                         <td>$10.000</td>
                         <td>$30.000</td>
                         <td>$50.000</td>
                     </tr>
                     <tr>
-                         <th scope="row">Montaña</th>
+                        <th scope="row">Urbana Plegable</th>
+                        <td>$12.000</td>
+                        <td>Consultar</td>
+                        <td>Consultar</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Montaña Trail</th>
                         <td>$15.000</td>
                         <td>$45.000</td>
                         <td>$70.000</td>
                     </tr>
                     <tr>
-                          <th scope="row">Eléctrica</th>
+                        <th scope="row">Gravel Aventura</th>
+                        <td>$18.000</td>
+                        <td>Consultar</td>
+                        <td>Consultar</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Eléctrica Urbana</th>
                         <td>$25.000</td>
                         <td>$70.000</td>
                         <td>$110.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Infantil</th>
+                        <td>$8.000</td>
+                        <td>Consultar</td>
+                        <td>Consultar</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tándem</th>
+                        <td>$20.000</td>
+                        <td>Consultar</td>
+                        <td>Consultar</td>
                     </tr>
                 </tbody>
             </table>
@@ -87,7 +117,7 @@
                     <tr>
                         <th scope="col">Recorrido</th>
                         <th scope="col">Distancia</th>
-                        <th scope="col">Duracion</th>
+                        <th scope="col">Duración</th>
                         <th scope="col">Nivel</th>
                         <th scope="col">Precio por persona</th>
                     </tr>
@@ -124,7 +154,7 @@
         </section> 
 
         <section id="informacion">
-            <h2>Informacion importante</h2>
+            <h2>Información importante</h2>
             <p>Todas las tarifas de alquiler incluyen <strong>casco y candado</strong></p>
 
             <p>Los recorridos guiados salen los sábados y domingos a las <strong>7:00 a.m.</strong></p>
@@ -135,30 +165,30 @@
                 <li>Ropa cómoda.</li>
                 <li>Agua.</li>
                 <li>Protección solar (gafas, gorra, bloqueador).</li>
-                <li>Documento de indentidad.</li>
+                <li>Documento de identidad.</li>
             </ul>
 
         </section>
     </main>
     
     <footer>
-        <p>
-            <strong>Rueda Libre</strong>
-        </p>
-        <p>
-            Contacto:
-            <a href="mailto:335macias@gmail.com">Correo electrónico</a>
-        </p>
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+        <div class="pie-contenido">
+            <div class="pie-bloque">
+                <p class="pie-titulo">Rueda Libre</p>
+                <p>Alquiler de bicicletas y recorridos guiados.</p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Contacto</p>
+                <p><a href="mailto:335macias@gmail.com">Correo electrónico</a></p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Horario de atención</p>
+                <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+                <p>Sábados, domingos y festivos: 6:00 a. m. a 2:00 p. m.</p>
+            </div>
+        </div>
+        <p class="pie-copy">&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
-    <a
-    class="whatsapp-fijo"
-    href="https://wa.me/573122845762"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar a Rueda Libre por WhatsApp (se abre en una nueva pestaña)"
->
-    WhatsApp
-</a>
+   
 </body>
 </html>

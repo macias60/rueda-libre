@@ -24,14 +24,18 @@
 
 <body>
 
-    <header>
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp">
+    <img src="../img/whatsapp.png" alt="" width="50" height="50"></a>
 
-        <img
-            src="../img/logo.png"
-            alt="Logo de Rueda Libre"
-            width="150"
-        >
-
+    <header class="navbar">
+        <a class="marca" href="../index.html" aria-label="Rueda Libre, inicio">
+            <img src="../img/logo.png" alt="" width="150" height="150">
+        </a>
         <nav aria-label="Navegación principal">
             <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
@@ -39,7 +43,6 @@
                 <li><a href="reserva.html" class="activo" aria-current="page">Reserva</a></li>
             </ul>
         </nav>
-
     </header>
 
 
@@ -52,13 +55,14 @@
             Reserva ahora mismo tu bicicleta o elige entre nuestros recorridos guiados.
         </p>
 
+        <div class="reserva-layout">
         <section id="formulario-reserva" aria-labelledby="titulo-reserva">
     <h2 id="titulo-reserva">Reserva ahora</h2>
 
     <p>Ingresa tus datos</p>
 
     <form action="#" method="get">
-        <div>
+        <div class="campo campo-completo">
             <label for="nombre">Nombre completo:</label>
             <input
                 type="text"
@@ -71,7 +75,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo">
             <label for="correo">Correo electrónico:</label>
             <input
                 type="email"
@@ -82,7 +86,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo">
             <label for="telefono">Teléfono de contacto:</label>
             <input
                 type="tel"
@@ -93,7 +97,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo campo-completo">
             <label for="experiencia">Tipo de experiencia:</label>
             <select id="experiencia" name="experiencia" required>
                 <option value="">Selecciona una opción</option>
@@ -106,7 +110,7 @@
             </select>
         </div>
 
-        <div>
+        <div class="campo">
             <label for="fecha">Fecha deseada:</label>
             <input
                 type="date"
@@ -116,7 +120,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo">
             <label for="hora">Hora deseada:</label>
             <input
                 type="time"
@@ -126,7 +130,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo campo-completo">
             <label for="personas">Cantidad de personas:</label>
             <input
                 type="number"
@@ -140,7 +144,7 @@
             >
         </div>
 
-        <div>
+        <div class="campo campo-completo">
             <label for="comentarios">Comentarios adicionales (opcional):</label>
             <textarea
                 id="comentarios"
@@ -154,7 +158,7 @@
     </form>
         </section>
 
-
+      <aside class="reserva-info" aria-label="Información de contacto y horarios">
         <section id="contacto">
 
             <h2>Contacto</h2>
@@ -210,35 +214,32 @@
             </p>
 
         </section>
+        </aside>
+        </div>
 
     </main>
 
 
     
     <footer>
-
-        <p><strong>Rueda Libre</strong></p>
-
-        <p>
-            Correo:
-            <a href="mailto:335macias@gmail.com">
-                Correo electrónico
-            </a>
-        </p>
-
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-
+        <div class="pie-contenido">
+            <div class="pie-bloque">
+                <p class="pie-titulo">Rueda Libre</p>
+                <p>Alquiler de bicicletas y recorridos guiados.</p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Contacto</p>
+                <p><a href="mailto:335macias@gmail.com">Correo electrónico</a></p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Horario de atención</p>
+                <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+                <p>Sábados, domingos y festivos: 6:00 a. m. a 2:00 p. m.</p>
+            </div>
+        </div>
+        <p class="pie-copy">&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
 
-    <a
-    class="whatsapp-fijo"
-    href="https://wa.me/573122845762"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar a Rueda Libre por WhatsApp (se abre en una nueva pestaña)"
->
-    WhatsApp
-</a>
 
 </body>
 
