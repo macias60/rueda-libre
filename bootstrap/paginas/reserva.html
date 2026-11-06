@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="../css/styles.css">
+<script src="../js/main.js" defer></script>
+    <meta
+        name="description"
+        content="Consulta los horarios de atención y contacta a Rueda Libre para reservar tu bicicleta."
+    >
+
+    <title>Reservas | Rueda Libre</title>
+</head>
+
+<body>
+
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573122845762"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp">
+    <img src="../img/whatsapp.png" alt="" width="50" height="50"></a>
+
+    <header class="navbar">
+        <a class="marca" href="../index.html" aria-label="Rueda Libre, inicio">
+            <img src="../img/logo.png" alt="" width="150" height="150">
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul id="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html">Tarifas</a></li>
+                <li><a href="reserva.html" class="activo" aria-current="page">Reserva</a></li>
+                <li><a href="../nocturna/index.html">Nocturna</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <h1>Reserva tu bicicleta</h1>
+
+        <p>
+            ¿Quieres disfrutar de una aventura sobre ruedas?
+            Reserva ahora mismo tu bicicleta o elige entre nuestros recorridos guiados.
+        </p>
+
+        <div class="reserva-layout">
+        <section id="formulario-reserva" aria-labelledby="titulo-reserva">
+    <h2 id="titulo-reserva">Reserva ahora</h2>
+
+    <p>Ingresa tus datos</p>
+
+    <form action="#" method="get">
+        <div class="campo campo-completo">
+            <label for="nombre">Nombre completo:</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                minlength="3"
+                maxlength="100"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="correo">Correo electrónico:</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Teléfono de contacto:</label>
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                required
+            >
+        </div>
+
+        <div class="campo campo-completo">
+            <label for="experiencia">Tipo de experiencia:</label>
+            <select id="experiencia" name="experiencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="urbana">Alquiler de bicicleta urbana</option>
+                <option value="montana">Alquiler de bicicleta de montaña</option>
+                <option value="electrica">Alquiler de bicicleta eléctrica</option>
+                <option value="rio-parques">Recorrido Río y Parques</option>
+                <option value="sabores-barrio">Recorrido Sabores de Barrio</option>
+                <option value="las-palmas">Recorrido Reto Las Palmas</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="fecha">Fecha deseada:</label>
+            <input
+                type="date"
+                id="fecha"
+                name="fecha"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="hora">Hora deseada:</label>
+            <input
+                type="time"
+                id="hora"
+                name="hora"
+                required
+            >
+        </div>
+
+        <div class="campo campo-completo">
+            <label for="personas">Cantidad de personas:</label>
+            <input
+                type="number"
+                id="personas"
+                name="personas"
+                min="1"
+                max="10"
+                step="1"
+                value="1"
+                required
+            >
+        </div>
+
+        <div class="campo campo-completo">
+            <label for="comentarios">Comentarios adicionales (opcional):</label>
+            <textarea
+                id="comentarios"
+                name="comentarios"
+                rows="4"
+                maxlength="500"
+            ></textarea>
+        </div>
+
+        <button class="boton" type="submit">Reservar</button>
+    </form>
+        </section>
+
+      <aside class="reserva-info" aria-label="Información de contacto y horarios">
+        <section id="contacto">
+
+            <h2>Contacto</h2>
+
+            <p>
+                Correo electrónico:
+            </p>
+
+            <p>
+                <a href="mailto:335macias@gmail.com">
+                    Contáctanos
+                </a>
+            </p>
+
+        </section>
+
+
+        <section id="horarios">
+
+            <h2>Horario de atención</h2>
+
+            <p>
+                Estos son nuestros horarios de atención al cliente:
+            </p>
+
+            <dl>
+
+                <dt><strong>Lunes a viernes</strong></dt>
+                <dd>7:00 a. m. a 7:00 p. m.</dd>
+
+                <dt><strong>Sábados</strong></dt>
+                <dd>6:00 a. m. a 2:00 p. m.</dd>
+
+                <dt><strong>Domingos y Festivos</strong></dt>
+                <dd>6:00 a. m. a 2:00 p. m.</dd>
+
+            </dl>
+
+        </section>
+
+
+        <section id="informacion">
+
+            <h2>Antes de reservar</h2>
+
+            <p>
+                Consulta nuestras tarifas y los recorridos disponibles
+                antes de elegir tu experiencia.
+            </p>
+
+            <p>
+                <a href="tarifas.html">Consultar tarifas y recorridos</a>
+            </p>
+
+        </section>
+        </aside>
+        </div>
+
+    </main>
+
+
+    
+    <footer>
+        <div class="pie-contenido">
+            <div class="pie-bloque">
+                <p class="pie-titulo">Rueda Libre</p>
+                <p>Alquiler de bicicletas y recorridos guiados.</p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Contacto</p>
+                <p><a href="mailto:335macias@gmail.com">Correo electrónico</a></p>
+            </div>
+            <div class="pie-bloque">
+                <p class="pie-titulo">Horario de atención</p>
+                <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+                <p>Sábados, domingos y festivos: 6:00 a. m. a 2:00 p. m.</p>
+            </div>
+        </div>
+        <p class="pie-copy">&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
+    </footer>
+
+
+</body>
+
+</html>
